@@ -1,0 +1,46 @@
+<div class="col-md-3" style="border: thin lightblue solid; border-radius: 5px;padding: 1em;">
+      <form class="form-horizontal ng-pristine ng-valid">
+        <fieldset>
+          <legend>New Car</legend>
+          <div class="form-group">
+            <label for="year" class="control-label col-xs-3"><span class="label label-info">Year</span></label>
+            <div class="col-xs-9">
+              <input type="number" ng-model="newcar.year" class="form-control ng-pristine ng-untouched ng-valid" id="year" placeholder="Year">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="registered" class="control-label col-xs-3"><span class="label label-info">Registered</span></label>
+            <div class="col-xs-9">
+              <input type="date" ng-model="newcar.registered" date-format="MM/dd/yyyy" date-type="string" class="form-control ng-pristine ng-untouched ng-valid" id="registered" placeholder="Registered">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="make" class="control-label col-xs-3"><span class="label label-info">Make</span></label>
+            <div class="col-xs-9">
+              <input type="text" ng-model="newcar.make" class="form-control ng-pristine ng-untouched ng-valid" id="make" placeholder="Make">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="model" class="control-label col-xs-3"><span class="label label-info">Model</span></label>
+            <div class="col-xs-9">
+              <input type="text" ng-model="newcar.model" class="form-control ng-pristine ng-untouched ng-valid" id="model" placeholder="Model">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description" class="control-label col-xs-3"><span class="label label-info">Description</span></label>
+            <div class="col-xs-9">
+              <input type="text" ng-model="newcar.description" class="form-control ng-pristine ng-untouched ng-valid" id="description" placeholder="Description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="price" class="control-label col-xs-3"><span class="label label-info">Price</span></label>
+            <div class="col-xs-9">
+              <input type="text" ng-model="newcar.price" class="form-control ng-pristine ng-untouched ng-valid" id="price" placeholder="Price">
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <div class="form-group">
+        <button type="submit" ng-click="saveCar()" class="btn btn-primary">Save</button>
+      </div>
+    </div>

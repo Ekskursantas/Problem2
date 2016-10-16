@@ -1,0 +1,48 @@
+
+<h1>{{ctrl.title}}</h1>
+<h2>Number of cars: {{cars.length}}</h2>
+<label>Search: <input ng-model="textSearch" type="text"></label>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>
+            <button ng-click="sortBy('year')">Year</button>
+            <span class="sortorder" ng-show="propertyName === 'year'" ng-class="{reverse: reverse}"></span>
+        </th>
+        <th>
+            <button ng-click="sortBy('registered')">Registered</button>
+            <span class="sortorder" ng-show="propertyName === 'registered'" ng-class="{reverse: reverse}"></span>
+        </th>
+        <th>
+            <button ng-click="sortBy('make')">Make</button>
+            <span class="sortorder" ng-show="propertyName === 'make'" ng-class="{reverse: reverse}"></span>
+        </th>
+        <th>
+            <button ng-click="sortBy('model')">Model</button>
+            <span class="sortorder" ng-show="propertyName === 'model'" ng-class="{reverse: reverse}"></span>
+        </th>
+        <th>
+            <button ng-click="sortBy('description')">Description</button>
+            <span class="sortorder" ng-show="propertyName === 'description'" ng-class="{reverse: reverse}"></span>
+        </th>
+        <th>
+            <button ng-click="sortBy('price')">Price</button>
+            <span class="sortorder" ng-show="propertyName === 'price'" ng-class="{reverse: reverse}"></span>
+        </th>
+        
+    </tr>
+    <tr ng-repeat="car in allcars|filter:textSearch| orderBy:collumnName:reverse">
+
+        <td>{{car.id}}</td>
+        <td>{{car.year}}</td>
+        <td>{{car.registered|date}}</td>
+        <td>{{car.make}}</td>
+        <td>{{car.model}}</td>
+        <td>{{car.description}}</td>
+        <td>{{car.price|currency}}</td>
+        <td><a href="#/newcar/edit/{{car.id}}">Edit</a> | 
+        <a href="#/home" ng-click="rmCar(car.id)">Delete</a></td>
+    </tr>
+
+
+</table>
